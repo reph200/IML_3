@@ -57,9 +57,8 @@ def fit_and_evaluate_adaboost(noise, n_learners=250, train_size=5000, test_size=
     fig.update_layout(title=f'AdaBoost Error For Number Of Learners - Noise Ratio: {noise}',
                       xaxis_title='Number of learners',
                       yaxis_title='Misclassification error')
-    # fig.show()
+    fig.show()
     # fig.write_image(f'adaboost_noise_{noise}.png')
-    print(1)
 
     # Question 2: Plotting decision surfaces
     T = [5, 50, 100, 250]
@@ -79,9 +78,8 @@ def fit_and_evaluate_adaboost(noise, n_learners=250, train_size=5000, test_size=
 
     fig.update_layout(title=f'AdaBoost Decision Boundaries for Different Iterations - Noise Ratio: {noise}',
                       margin=dict(t=100))
-    # fig.show()
+    fig.show()
     # fig.write_image(f'adaboost_noise_{noise}_decision_boundaries.png')
-    print(2)
 
     # Question 3: Decision surface of best performing ensemble
 
@@ -108,9 +106,9 @@ def fit_and_evaluate_adaboost(noise, n_learners=250, train_size=5000, test_size=
     fig.update_layout(
         title=f'Best AdaBoost Decision Boundary for {best_iteration} Learners - Accuracy: {1 - test_error[best_iteration - 1]:.2f}, Noise Ratio: {noise}')
 
-    # fig.show()
+    fig.show()
     # fig.write_image(f'adaboost_noise_{noise}_best_decision_boundary.png')
-    print(3)
+
 
     # Question 4: Decision surface with weighted samples
 
@@ -136,9 +134,8 @@ def fit_and_evaluate_adaboost(noise, n_learners=250, train_size=5000, test_size=
     # Update layout with title
     fig.update_layout(width=500, height=500,
                          title=f"Final AdaBoost Sample Distribution - Noise Ratio: {noise}")
-    # fig.show()
+    fig.show()
     # fig.write_image(f"adaboost_{noise}_weighted_samples.png")
-    print(4)
 
 if __name__ == '__main__':
     np.random.seed(0)
